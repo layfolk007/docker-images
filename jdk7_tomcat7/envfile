@@ -1,1 +1,0 @@
-JAVA_OPTS="-Djava.awt.headless=true -Xms512m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=512m"
