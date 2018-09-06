@@ -1,1 +1,1 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch-platinum:6.3.2
+FROM docker.elastic.co/elasticsearch/elasticsearch-platinum:6.2.3
