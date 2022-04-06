@@ -1,10 +1,10 @@
-name: Build and push es Docker image
+name: Build and push logstash Docker image
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - es
+      - logstash
 
 jobs:
   build:
@@ -40,4 +40,4 @@ jobs:
         context: ./
         push: true
         tags: |
-          0layfolk0/elasticsearch:7.17.2
+          0layfolk0/logstash:7.17.2
