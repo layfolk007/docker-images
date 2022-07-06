@@ -40,4 +40,4 @@ jobs:
         context: ./
         push: true
         tags: |
-          0layfolk0/kibana:7.17.2
+          0layfolk0/kibana:7.17.5
