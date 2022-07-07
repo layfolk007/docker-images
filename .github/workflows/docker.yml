@@ -3,14 +3,20 @@ name: Build and push es Docker image
 on:
   workflow_dispatch:
   push:
-    branches:
-      - es
+    #branches:
+    #  - es
+    tags:
+    - es*
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Get version
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/*-/}
+
     - uses: actions/checkout@v2
 
     - name: Set up QEMU
@@ -32,6 +38,7 @@ jobs:
 #        username: ${{ github.actor }}
 #        password: ${{ secrets.GITHUB_TOKEN }}
 
+    #      0layfolk0/elasticsearch:${{ github.ref }}
     - name: Build and push Docker images to docker.io and ghcr.io
       uses: docker/build-push-action@v2
       with:
@@ -40,4 +47,4 @@ jobs:
         context: ./
         push: true
         tags: |
-          0layfolk0/elasticsearch:7.17.5
+          0layfolk0/elasticsearch:${{ steps.get_version.outputs.VERSION }}
