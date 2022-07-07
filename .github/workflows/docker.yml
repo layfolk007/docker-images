@@ -3,14 +3,20 @@ name: Build and push kibana Docker image
 on:
   workflow_dispatch:
   push:
-    branches:
-      - kibana
+    #branches:
+    #  - kibana
+    tags:
+    - kb*
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Get version
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/*-/}
+
     - uses: actions/checkout@v2
 
     - name: Set up QEMU
@@ -40,4 +46,4 @@ jobs:
         context: ./
         push: true
         tags: |
-          0layfolk0/kibana:7.17.5
+          0layfolk0/kibana:${{ steps.get_version.outputs.VERSION }}
