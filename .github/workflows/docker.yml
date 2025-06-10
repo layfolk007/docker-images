@@ -1,12 +1,12 @@
-name: Build and push es Docker image
+name: Build and push php Docker image
 
 on:
   workflow_dispatch:
   push:
     #branches:
-    #  - es
+    #  - php
     tags:
-    - es*
+    - php*
 
 jobs:
   build:
@@ -47,4 +47,4 @@ jobs:
         context: ./
         push: true
         tags: |
-          0layfolk0/elasticsearch:${{ steps.get_version.outputs.VERSION }}
+          0layfolk0/php:${{ steps.get_version.outputs.VERSION }}
