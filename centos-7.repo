@@ -1,0 +1,34 @@
+[old-base]
+name=CentOS-$full_releasever - Base
+baseurl=http://mirrors.aliyun.com/centos-vault/$full_releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+
+[old-updates]
+name=CentOS-$full_releasever - Updates
+baseurl=http://mirrors.aliyun.com/centos-vault/$full_releasever/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+
+[old-extras]
+name=CentOS-$full_releasever - Extras
+baseurl=http://mirrors.aliyun.com/centos-vault/$full_releasever/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+
+[old-centosplus]
+name=CentOS-$full_releasever - CentOSPlus
+baseurl=http://mirrors.aliyun.com/centos-vault/$full_releasever/centosplus/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=0
+
+[old-fasttrack]
+name=CentOS-$full_releasever - CentOSPlus
+baseurl=http://mirrors.aliyun.com/centos-vault/$full_releasever/fasttrack/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=0

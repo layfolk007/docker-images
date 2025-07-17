@@ -1,0 +1,13 @@
+version: '3'
+services:
+  buildrpm-6:
+    build:
+      context: .
+      dockerfile: Dockerfile-6
+    image: 0layfolk0/buildrpm6:1.0
+
+  buildrpm-7:
+    build:
+      context: .
+      dockerfile: Dockerfile-7
+    image: 0layfolk0/buildrpm7:1.0

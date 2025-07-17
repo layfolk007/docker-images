@@ -1,0 +1,6 @@
+FROM       centos:6
+MAINTAINER layfolk
+ENV        LANG              en_US.utf8
+RUN        rm -f /etc/yum.repos.d/*
+ADD        centos-6.repo epel-6.repo /etc/yum.repos.d/
+RUN        ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && yum install -y rpm-build gcc zlib-devel pam-devel openssl-devel wget libXt-devel imake gtk2-devel krb5-devel util-linux pcre-devel && rm -rf /var/cache/yum
